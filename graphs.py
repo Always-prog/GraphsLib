@@ -58,6 +58,10 @@ class Node:
 
 
 class Verge:
+    """
+    Class that represents verges between Nodes.
+    Use `verge = Verge(node1, node2)` to connected nodes.
+    """
     def __init__(self, node1: Node, node2: Node, **verge_data):
         self._node1 = node1
         self._node2 = node2
@@ -88,6 +92,10 @@ class Verge:
 
 
 class Graph:
+    """
+    Class that represents a Graph.
+    It is optional class, and it is not required for work with Nodes and Verges functionality.
+    """
     def __init__(self, nodes: List = None, verges: List = None, **graph_data):
         self.nodes = nodes or []
         self.verges = verges or []
