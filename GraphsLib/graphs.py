@@ -107,7 +107,7 @@ class Graph:
         return node
 
     def create_verge(self, node1: Node, node2: Node, **verge_data):
-        verge = Verge(node1=node1, node2=node2, verge_data=verge_data)
+        verge = Verge(node1=node1, node2=node2, **verge_data)
         self.verges.append(verge)
         return verge
 
@@ -115,7 +115,3 @@ class Graph:
         if index >= len(self.nodes):
             raise IndexError('Not found node with given index')
         return self.nodes[index]
-
-
-
-

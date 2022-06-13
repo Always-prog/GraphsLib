@@ -1,3 +1,4 @@
-__version__ = "0.0.1"
+from .graphs import Graph, Verge, Node
+__version__ = "0.0.3"
 __author__ = 'AlwaysProg'
 __credits__ = 'AlwaysProg'
