@@ -124,21 +124,3 @@ class Graph:
         if index >= len(self.nodes):
             raise IndexError('Not found node with given index')
         return self.nodes[index]
-
-
-graph = Graph(name='Base Graph')
-nodeA = graph.create_node(name='A')
-nodeB = graph.create_node(name='B')
-nodeC = graph.create_node(name='C')
-nodeD = graph.create_node(name='D')
-nodeE = graph.create_node(name='E')
-
-vergeA_B = graph.create_verge(node1=nodeA, node2=nodeB, name='Road A-B', length=3)
-vergeA_C = graph.create_verge(node1=nodeA, node2=nodeC, name='Road A-C', length=1)
-
-vergeC_D = graph.create_verge(nodeC, nodeD, name='Road C-D', length=2)
-vergeB_E = graph.create_verge(nodeB, nodeE, name='Road B-E', length=2)
-
-vergeD_E = graph.create_verge(nodeD, nodeE, name='Road D-E', length=3)
-
-print(nodeC.connected_nodes)
