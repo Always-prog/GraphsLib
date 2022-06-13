@@ -54,7 +54,10 @@ class Node:
         return self._node_data
 
     def __str__(self):
-        return f'{self.node_data}'
+        return f'Node=<{id(self)}> data={self.node_data}'
+
+    def __repr__(self):
+        return self.__str__()
 
 
 class Verge:
@@ -90,6 +93,12 @@ class Verge:
             raise ValueError(f'Cant connect second node {node2_input_value}. Incorrect type. It can be only Node')
         node2_input_value.verges.append(self)
 
+    def __str__(self):
+        return f'Verge=<{id(self)}> data={self.verge_data}'
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class Graph:
     """
@@ -115,3 +124,21 @@ class Graph:
         if index >= len(self.nodes):
             raise IndexError('Not found node with given index')
         return self.nodes[index]
+
+
+graph = Graph(name='Base Graph')
+nodeA = graph.create_node(name='A')
+nodeB = graph.create_node(name='B')
+nodeC = graph.create_node(name='C')
+nodeD = graph.create_node(name='D')
+nodeE = graph.create_node(name='E')
+
+vergeA_B = graph.create_verge(node1=nodeA, node2=nodeB, name='Road A-B', length=3)
+vergeA_C = graph.create_verge(node1=nodeA, node2=nodeC, name='Road A-C', length=1)
+
+vergeC_D = graph.create_verge(nodeC, nodeD, name='Road C-D', length=2)
+vergeB_E = graph.create_verge(nodeB, nodeE, name='Road B-E', length=2)
+
+vergeD_E = graph.create_verge(nodeD, nodeE, name='Road D-E', length=3)
+
+print(nodeC.connected_nodes)

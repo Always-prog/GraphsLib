@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='GraphsLib',
-    version='0.0.3',
+    version='0.0.4',
     description='Lib for working with graphs, nodes and verges.',
     url='https://github.com/Always-prog/GraphsLib',
     author='AlwaysProg',
